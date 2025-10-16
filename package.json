@@ -4,7 +4,11 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "migrate": "php artisan migrate --seed",
+        "laravel": "php artisan serve",
+        "start-dev": "concurrently \"npm run migrate\" \"npm run laravel\"",
+        "start-prod": "concurrently \"npm run build\" \"npm run laravel\""
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
